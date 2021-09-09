@@ -1,0 +1,4 @@
+/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/client.dir
+/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/stage1.dir
