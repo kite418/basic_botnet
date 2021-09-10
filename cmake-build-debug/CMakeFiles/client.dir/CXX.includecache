@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/macos/CLionProjects/stage1/client.cpp
+/Users/macos/CLionProjects/basic_botnet/client.cpp
 iostream
 -
 sys/types.h
@@ -19,4 +19,8 @@ string
 -
 unistd.h
 -
+commands.h
+/Users/macos/CLionProjects/basic_botnet/commands.h
+
+/Users/macos/CLionProjects/basic_botnet/commands.h
 

@@ -10,5 +10,7 @@ enum Command
     SAY_HELLO
 };
 
+#define PACKET_LEN      256
+
 
 #endif //STAGE1_COMMANDS_H

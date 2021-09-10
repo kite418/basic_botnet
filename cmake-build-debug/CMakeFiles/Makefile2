@@ -54,10 +54,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/macos/CLionProjects/stage1
+CMAKE_SOURCE_DIR = /Users/macos/CLionProjects/basic_botnet
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/macos/CLionProjects/stage1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/macos/CLionProjects/basic_botnet/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/stage1.dir/clean
 CMakeFiles/client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target client"
 .PHONY : CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/client.dir/clean:
 CMakeFiles/stage1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stage1.dir/build.make CMakeFiles/stage1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stage1.dir/build.make CMakeFiles/stage1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target stage1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target stage1"
 .PHONY : CMakeFiles/stage1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/stage1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stage1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/stage1.dir/rule
 
 # Convenience name for target.

@@ -6,16 +6,29 @@
 #include "commands.h"
 #include <string.h>
 
+class BotServer {
+private:
+    int sockfd;
+    int packet_len;
+
+public:
+    BotServer(int sockfd, int packet_len = PACKET_LEN) {
+        this->sockfd = sockfd;
+        this->packet_len = packet_len;
+    }
+
+
+};
+
+
 void sayHello(int client_socket) {
-    std::string cmd_string =  std::to_string(SAY_HELLO);
-
-
-    send(client_socket, hello_command, sizeof(hello_command), 0);
+    char cmd[256];
+    std::sprintf(cmd, "%d", SAY_HELLO);
+    std::cout << cmd << std::endl ;
+    send(client_socket, cmd, sizeof(cmd), 0);
 }
 
 int main() {
-    char server_message[256] = "HELLO!!!!";
-
     int server_socket;
     server_socket = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -32,6 +45,11 @@ int main() {
     client_socket = accept(server_socket, NULL, NULL);
 
     sayHello(client_socket);
+
+    char response[PACKET_LEN];
+    recv(client_socket, response, sizeof(response), 0);
+    std::cout << response << std::endl;
+
     close(client_socket);
 
     return 0;

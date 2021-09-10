@@ -6,30 +6,66 @@
 #include <unistd.h>
 #include "commands.h"
 
-void hello() {
-    std::cout << "HELLO!!@#!@#!@#!@#" << std::endl;
-}
+class BotClient {
+    private:
+        int socketfd;
+        int packet_len;
 
-void process_command(char command[]){
-
-    //convert string command to int
-    const char *errstr;
-    int command_id = strtonum(command, 0, 100, &errstr);
-    if (errstr) {
-        return;
+    void hello(char cmd_output[256]) {
+        std::cout << "PROCESSING" << std::endl;
+        sprintf(cmd_output, "HELLO!!");
     }
 
-    //determine command to to run
-    switch (command_id == SAY_HELLO) {
-        case 1:
-            hello();
-            break;
-        default:
-            std::cout << "NOT A VALID COMMAND" << std::endl;
+    void send_msg(char message[]) {
+        send(socketfd, message, packet_len, 0);
     }
 
-}
+    int msg_to_cmd(char message[]) {
+        const char *errstr;
+        int command = strtonum(message, 0, 100, &errstr);
 
+        if (errstr) {
+            return -1;
+        }
+
+        return command;
+    }
+
+    public:
+        BotClient(int socketfd, int packet_len = PACKET_LEN) {
+            this->socketfd = socketfd;
+            this->packet_len = packet_len;
+        }
+
+
+    void process_command(char message[]){
+        //convert string command to int
+        int command = msg_to_cmd(message);
+
+        char cmd_output[256] = {'\0'};
+        bool cmd_ran = true;
+
+        //determine command to to run
+        switch (command) {
+            case SAY_HELLO:
+                hello(cmd_output);
+                break;
+            default:
+                std::cout << "NOT A VALID COMMAND" << std::endl;
+                cmd_ran = false;
+        }
+
+        if (!cmd_ran || cmd_output == NULL) {
+            return;
+        }
+
+        send_msg(cmd_output);
+    }
+
+    void clean_up() {
+        close(this->socketfd);
+    }
+};
 
 int main() {
     int network_socket;
@@ -43,13 +79,21 @@ int main() {
     int connection_status = connect(network_socket, (struct sockaddr*) &server_address, sizeof(server_address));
     if (connection_status == -1) {
        std::cout << "ERROR CONNECTING IDK" << std::endl;
+       exit(0);
     }
 
     std::cout << "CONNECTION ESTABLISHED" << std::endl;
-    char server_command[256];
-    recv(network_socket, server_command, sizeof(server_command), 0);
 
-    process_command(server_command);
+    //create client
+    BotClient bc(network_socket);
+
+    char server_command[256];
+    int bytes_read = recv(network_socket, server_command, 256, 0);
+    std::cout << bytes_read << " " << server_command << " " << strlen(server_command) << std::endl;
+
+    bc.process_command(server_command);
+
+
 
     close(network_socket);
 

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/macos/CLionProjects/stage1/client.cpp" "/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/client.dir/client.cpp.o"
-  "/Users/macos/CLionProjects/stage1/strtonum.cpp" "/Users/macos/CLionProjects/stage1/cmake-build-debug/CMakeFiles/client.dir/strtonum.cpp.o"
+  "/Users/macos/CLionProjects/basic_botnet/client.cpp" "/Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles/client.dir/client.cpp.o"
+  "/Users/macos/CLionProjects/basic_botnet/strtonum.cpp" "/Users/macos/CLionProjects/basic_botnet/cmake-build-debug/CMakeFiles/client.dir/strtonum.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
